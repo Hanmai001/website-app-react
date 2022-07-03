@@ -3,9 +3,9 @@ import styles from './Header.module.css';
 function Header() {
     return <header className={styles.header}>
         <h1>DONGREVIEW</h1>
-        <input placeholder='Tìm kiếm'></input>
+        <input placeholder='  Tìm kiếm'></input>
         <ul className={styles.nav}>
-            <li style={{fontSize: '1.8rem'}}>
+            <li style={{fontSize: '1.8rem', color: '#f5813e'}}>
                 PHIM ĐỀ XUẤT
             </li>
             <li>
@@ -26,7 +26,8 @@ function Header() {
             <li>
                 Phim chiếu rạp
             </li>
-        </ul>   
+        </ul>
+        <p>none</p>   
     </header>
 }
 

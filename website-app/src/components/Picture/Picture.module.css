@@ -1,0 +1,16 @@
+.row {
+    margin-left: 2.8rem;
+}
+/* Canh cột */
+.col {
+    float: left;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+/*Kích thước mỗi cột = 33.33% */
+.colThird {
+    width: calc(100% / 4);
+}
+.margin {
+    margin-top: 1.5rem !important;
+}
