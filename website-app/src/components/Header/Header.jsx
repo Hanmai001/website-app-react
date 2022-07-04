@@ -4,7 +4,11 @@ function Header() {
     return <header className={styles.header}>
         <h1>DONGREVIEW</h1>
         <input placeholder='  Tìm kiếm'></input>
-        <i className="ti-github"></i>
+        <div>
+            <i className="ti-github"></i>
+            <p className={styles.login}>Đăng nhập</p> 
+        </div>
+       
         <ul className={styles.nav}>
             <li style={{fontSize: '1.8rem', color: '#f5813e'}}>
                 PHIM ĐỀ XUẤT
@@ -28,7 +32,7 @@ function Header() {
                 Phim chiếu rạp
             </li>
         </ul>
-        <p>none</p>   
+        <p className={styles.line}>none</p>   
     </header>
 }
 
