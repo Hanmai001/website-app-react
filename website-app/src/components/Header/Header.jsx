@@ -4,6 +4,7 @@ function Header() {
     return <header className={styles.header}>
         <h1>DONGREVIEW</h1>
         <input placeholder='  Tìm kiếm'></input>
+        <i className="ti-github"></i>
         <ul className={styles.nav}>
             <li style={{fontSize: '1.8rem', color: '#f5813e'}}>
                 PHIM ĐỀ XUẤT

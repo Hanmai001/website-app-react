@@ -1,5 +1,5 @@
 .row {
-    margin-left: 2.8rem;
+    margin-left: 3.2rem;
 }
 /* Canh cột */
 .col {
@@ -12,5 +12,18 @@
     width: calc(100% / 4);
 }
 .margin {
-    margin-top: 1.5rem !important;
+    margin-top: 1rem !important;
+}
+.pic {
+
+}
+.pic p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(21, 166, 214);
+    background-color: rgb(50, 49, 49);
+    position: relative;
+    width: 81%;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    top: -3px;
 }

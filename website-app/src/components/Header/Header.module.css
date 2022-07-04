@@ -18,7 +18,8 @@
     border: none;
     display: inline-block;
     background-color: #ecad88;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
 }
 .nav {
     display: inline-block;
@@ -32,7 +33,7 @@
     padding-right: 2rem;
     color: #e1630f;
 }
-p {
+.header p {
     width: 93.7%;
     color: #f5813e;
     background-color: #f5813e;
