@@ -1,4 +1,4 @@
-const pics = [
+const theater = [
     {
         key: 1,
         title: "TÍN HIỆU DIỆT VONG",
@@ -61,4 +61,4 @@ const pics = [
     }
 ]
 
-export default pics;
+export default theater;
