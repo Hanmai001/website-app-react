@@ -1,38 +1,64 @@
 import React from 'react';
 import styles from './Header.module.css';
 function Header() {
+    function handleClick() {
+        const modal = document.querySelector('.js-modal');
+        modal.classList.add('open');
+    }
     return <header className={styles.header}>
+        <box className={styles.modal}>
+            <div  className={styles.modalContainer}>
+
+            </div>
+        </box>
         <h1>DONGREVIEW</h1>
         <input placeholder='  Tìm kiếm'></input>
         <div>
             <i className="ti-github"></i>
-            <p className={styles.login}>Đăng nhập</p> 
+            <p className={styles.login} onClick={handleClick}>Đăng nhập</p> 
         </div>
-       
+        
+        <p className={styles.line}>none</p>
         <ul className={styles.nav}>
             <li style={{fontSize: '1.8rem', color: '#f5813e'}}>
                 PHIM ĐỀ XUẤT
             </li>
             <li>
-                Phim mới
+                <a href="/">Phim mới</a>
             </li>
             <li>
-                Thể loại
+                <a href="/">Thể loại</a>
+                <ul className={styles.subnav}>
+                    <li><a href="#">Kinh dị</a></li>
+                    <li><a href="#">Hành động</a></li>
+                    <li><a href="#">Viễn tưởng</a></li>
+                    <li><a href="#">Hoạt hình</a></li>
+                    <li><a href="#">Hài hước</a></li>
+                    <li><a href="#">Tình cảm</a></li>
+                </ul>
             </li>
             <li>
-                Quốc gia
+                 <a href="/">Quốc gia</a>
+                 <ul className={styles.subnav}>
+                    <li><a href="#">Mỹ</a></li>
+                    <li><a href="#">Nhật Bản</a></li>
+                    <li><a href="#">Việt Nam</a></li>
+                    <li><a href="#">Hàn Quốc</a></li>
+                    <li><a href="#">Nga</a></li>
+                    <li><a href="#">Trung Quốc</a></li>
+                </ul>
             </li>
             <li>
-                Phim lẻ
+                 <a href="/">Phim lẻ</a>
             </li>
             <li>
-                Phim bộ
+                 <a href="/">Phim bộ</a>
             </li>
             <li>
-                Phim chiếu rạp
+                 <a href="/">Phim chiếu rạp</a>
             </li>
         </ul>
-        <p className={styles.line}>none</p>   
+           
     </header>
 }
 

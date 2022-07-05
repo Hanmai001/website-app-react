@@ -35,11 +35,47 @@
     font-size: 1.5rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    position: relative;
+}
+.nav > li a {
+    text-decoration: none;
     color: #e1630f;
 }
 .nav > li:last-child {
     padding-right: 0 !important;
 }
+.nav > li:hover > a{
+    color: rgb(36, 35, 35);
+    background-color: #ccc;
+    opacity: 0.8;
+}
+.nav .subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #000;
+    opacity: 0.8;
+    /*Bóng đổ cho subnav*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.nav li:hover .subnav {
+    display: block;
+}
+.nav .subnav li:hover a,
+/*Chỉ tác động lên từng thẻ a(cấp 1) trực tiếp từ thẻ li trực tiếp từ nav */
+/*HOME BAND TOUR CONTACT MORE*/
+.nav .subnav > li:hover {
+    color: #000;
+    background-color: #ccc;
+}
+.nav .subnav > li {
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+}
+.nav .subnav a {
+    color: #fff;
+    font-size: 1rem;
+}
+
 .header .line {
     width: 94.8%;
     color: #f5813e;
@@ -68,4 +104,31 @@
     cursor: pointer;
     color: rgb(76, 59, 59);
     
+}
+
+.modal {
+    /* Tương quan với cửa sổ trình duyệt */
+    position: fixed;
+    width: 30%;
+    height: 75%;
+    /* lớp overlay phủ lên */
+    background-color: #fff;
+    display: none;
+}
+.modal.open {
+    /*Cần biến container thành giao diện FLEXBOX để nằm giữa cha MODAL*/
+    display: flex;
+}
+.modalContainer {
+    background: #fff;
+    width: 900px;
+    /*Khi thu nhỏ trình duyệt box nó thu hẹp lại nhưng chừa mỗi bên là 16px */
+    max-width: calc(100% - 32px);
+    /* Đặt tối thiểu vì nếu có thay đổi sẽ tự tăng*/
+    min-height: 200px;
+    /*để sdung pos absolute cho mấy thẻ con */
+    position: relative;
+
+    /* Để sdung keyframes modalFadeIn đi chậm ease 0.3s*/
+    animation: modalFadeIn ease 0.5s
 }
