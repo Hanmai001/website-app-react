@@ -27,3 +27,10 @@
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     top: -3px;
 }
+.pic p:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+.pic img:hover {
+    cursor: pointer;
+}
