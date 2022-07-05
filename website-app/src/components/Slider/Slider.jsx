@@ -31,10 +31,12 @@ function Slider() {
         <button onClick={increase} className={styles.buttonr} value={pos}>
             <i className="ti-angle-right"></i>
         </button>
-        <Picture src={pics[4 * pos].src} title={pics[4 * pos].title}/>
-        <Picture src={pics[4 * pos + 1].src} title={pics[4 * pos + 1].title}/>
-        <Picture src={pics[4 * pos + 2].src} title={pics[4 * pos + 2].title}/>
-        <Picture src={pics[4 * pos + 3].src} title={pics[4 * pos + 3].title}/>
+        <div className={styles.show}>
+            <Picture src={pics[4 * pos].src} title={pics[4 * pos].title}/>
+            <Picture src={pics[4 * pos + 1].src} title={pics[4 * pos + 1].title}/>
+            <Picture src={pics[4 * pos + 2].src} title={pics[4 * pos + 2].title}/>
+            <Picture src={pics[4 * pos + 3].src} title={pics[4 * pos + 3].title}/>
+        </div>
         <div className={styles.dot}>
             {/* 
             <span className={check[0] ? styles.sdot : styles.ndot}></span>
@@ -45,6 +47,7 @@ function Slider() {
         </div>
         
     </div>
+   
 }
 
 export default Slider;

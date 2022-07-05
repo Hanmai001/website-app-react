@@ -37,8 +37,11 @@
     padding-right: 2rem;
     color: #e1630f;
 }
+.nav > li:last-child {
+    padding-right: 0 !important;
+}
 .header .line {
-    width: 93.7%;
+    width: 94.8%;
     color: #f5813e;
     background-color: #f5813e;
     font-size: 0.3rem;

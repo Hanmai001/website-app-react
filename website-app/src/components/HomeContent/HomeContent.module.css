@@ -1,7 +1,24 @@
 .content {
-    margin: 0 2.5em 0 2.5rem !important;
+    margin: 0 0 0 2.5rem;
+    position: relative;
 }
-.content listItem {
-    width: 75%;
+.content .listItem {
+    padding-left: 3rem;
+    display: grid;
+    grid-template-columns: 288px 288px 288px;
+    gap: 0.8rem 0;
+    margin-right: 17.8rem
+}
+.content .board {
+    margin-left: 0 !important;
+    display: grid;
+    grid-template-rows: 20% 40% 40%;
+    width: 19.5rem;
     height: 100%;
+    position: absolute;
+    background-color: #fff;
+    right: 0;
+}
+.content .board .item1 {
+    background-color: chocolate;
 }
