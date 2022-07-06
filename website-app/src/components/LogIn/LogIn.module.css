@@ -1,0 +1,105 @@
+.background{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(220,220,220,0.5);
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    position: relative;
+    background-color: white;
+    padding: 3rem;
+    width: 100%;
+    max-width: 30rem;
+    height: 30rem;
+    align-items: center;
+    border-width: 5px;
+}   
+
+.btn{
+    position: absolute;
+    right:-1.5rem;
+    top: -1.4rem;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.box > h2{
+    text-align: center;
+    background-color: #f5813e;
+    color:white;
+    padding: auto;
+    width: 100%
+}
+
+.box > p{
+    margin: 3rem 0 0.5rem 4rem;
+    text-align: left;
+}
+
+.box > input{
+    margin: 0rem 4rem 0rem 4rem;
+    padding: 1rem 0rem 1rem 0rem;
+    font-size: 15px;
+    width: min(100% - 7.25rem, 100rem);
+    border-width: 0.1rem;
+    border-radius: 2%;
+}
+
+.head{
+    width: 100%;
+    height: 5rem;
+    background-color: #f5813e;
+    top: 0;
+    right: 0;
+    position: absolute;
+    align-items: center;
+}
+
+.head > h2{
+    text-align: center;
+    color:white;
+    position: absolute;
+    top: 1.5rem;
+    right: 10.5rem;
+    height:min(100% - 0.5rem, 3rem);
+}
+
+.signIn{
+    position: absolute;
+    bottom: 7rem;
+    left: 10rem;
+}
+
+.signIn > button{
+    height: 3.5rem;
+    width: 10.5rem;
+    background-color: #f5813e;  
+    border-radius: 0.2rem;
+    font-size: 20px
+}
+
+.alter{
+    position: absolute;
+    bottom: 2rem;
+    left: 9.5rem;
+}
+
+.alter > p{
+    color: #000;
+    font-size: 20px
+}
+
+.alter > p:hover{
+    color: blue;
+    font-style: italic;
+    text-decoration: underline;
+}

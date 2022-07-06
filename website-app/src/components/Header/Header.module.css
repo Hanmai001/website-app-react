@@ -100,11 +100,11 @@
     font-size: 2rem;    
     margin-left: 1.4rem;
 }
-.header div:hover {
+/* .header div:hover {
     cursor: pointer;
     color: rgb(76, 59, 59);
     
-}
+} */
 
 .modal {
     /* Tương quan với cửa sổ trình duyệt */
@@ -131,4 +131,9 @@
 
     /* Để sdung keyframes modalFadeIn đi chậm ease 0.3s*/
     animation: modalFadeIn ease 0.5s
+}
+
+.login:hover{
+    cursor: pointer;
+    color: rgb(76, 59, 59);
 }
