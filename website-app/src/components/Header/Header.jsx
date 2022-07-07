@@ -2,22 +2,13 @@ import React, { useState } from 'react';
 import styles from './Header.module.css';
 import LogIn from '../LogIn/LogIn';
 function Header(props) {
-    function handleClick() {
-        // const modal = document.querySelector('.js-modal');
-        // modal.classList.add('open')
-        console.log('Hello')
-    }
     return <header className={styles.header}>
-        {/* <box className={styles.modal}>
-            <div  className={styles.modalContainer}>
-
-            </div>
-        </box> */}
         <h1>DONGREVIEW</h1>
         <input placeholder='  Tìm kiếm'></input>
+        <i className="ti-search"></i>
         <div className={styles.login} onClick={() => {props.log()}}>
             <i className="ti-github"></i>
-            <p>Đăng nhập</p>
+            <p className={styles.login}>Đăng nhập</p> 
         </div>
         
         <p className={styles.line}>none</p>

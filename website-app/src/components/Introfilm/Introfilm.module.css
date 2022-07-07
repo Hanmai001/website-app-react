@@ -1,0 +1,15 @@
+.intro .line {
+    width: 94.8%;
+    color: #f5813e;
+    background-color: #f5813e;
+    font-size: 0.3rem;
+    margin: 0 2.5rem 0 2.5rem;
+    position: absolute;
+    top: 8.2rem;
+    border-radius: 10px;
+}
+.intro h1 {
+    color:rgb(245, 149, 46);
+    font-size: 1.8rem;
+    margin: 0.5rem 0 0 2.2rem;
+}

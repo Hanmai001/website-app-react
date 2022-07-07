@@ -6,7 +6,7 @@ function Picture(props) {
     let title = props.title
     title = title.slice(0, 15) + '...'
     return <div>
-        <div className = {styles.pic}>
+        <div className = {styles.pic} key={props.key}>
             <img src={props.src} style={{width: "230px", height: "310px"}}></img>
             <p title={props.title}>{title}</p>
         </div>

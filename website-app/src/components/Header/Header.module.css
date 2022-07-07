@@ -23,6 +23,13 @@
     right: 10rem;
     padding: 0.5rem 0 0.3rem 0;
 }
+.header > i {
+    position: absolute;
+    right: 11rem;
+    top: 2.2rem;
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
 .nav {
     display: inline-block;
     margin: 0 0.5rem 0 0.5rem;
@@ -129,8 +136,8 @@
     /*để sdung pos absolute cho mấy thẻ con */
     position: relative;
 
-    /* Để sdung keyframes modalFadeIn đi chậm ease 0.3s*/
-    animation: modalFadeIn ease 0.5s
+    /* Để sdung keyframes modalFadeIn đi chậm ease 1s*/
+    animation: modalFadeIn ease 1s
 }
 
 .login:hover{

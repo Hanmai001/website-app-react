@@ -1,33 +1,24 @@
-import React, { useState } from "react";
-import Header from "../Header/Header";
-import Slider from "../Slider/Slider";
-import Footer from "../Footer/Footer";
-import LogIn from "../LogIn/LogIn";
-import HomeContent from "../HomeContent/HomeContent";
+import React from "react";
+import GlobalStyle from "../GlobalStyle/index";
+//Page Homepage
+import HomePage from "../HomePage/HomePage";
+//Page Introfilm
+import Introfilm from "../Introfilm/Introfilm";
+import HeaderIntroFilm from "../Introfilm/HeaderIntroFilm";
+import films from "../Slider/pics";
 
 function App() {
-  const [login, setLogin] = useState(false)
-
-  function popDown(){
-    setLogin(false)
-  }
-
-  function popUp(){
-    setLogin(true)
-  }
   return (
-    <div className="App">
-      <Header 
-        log = {popUp}
-      />
-      <Slider />
-      <HomeContent />
-      <Footer />
-      <LogIn 
-        trigger = {login}
-        unlog = {popDown}
-      />
-    </div>
+      <div className="App">
+        <GlobalStyle>
+          {/*
+          <HeaderIntroFilm />
+          <Introfilm src={films[0].src} title={films[0].title} key={films[0].key}/>
+        */}
+        <HomePage />
+        
+      </GlobalStyle>
+      </div>
   );
 }
 

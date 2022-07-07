@@ -32,17 +32,12 @@ function Slider() {
             <i className="ti-angle-right"></i>
         </button>
         <div className={styles.show}>
-            <Picture src={pics[4 * pos].src} title={pics[4 * pos].title}/>
-            <Picture src={pics[4 * pos + 1].src} title={pics[4 * pos + 1].title}/>
-            <Picture src={pics[4 * pos + 2].src} title={pics[4 * pos + 2].title}/>
-            <Picture src={pics[4 * pos + 3].src} title={pics[4 * pos + 3].title}/>
+            <Picture src={pics[4 * pos].src} title={pics[4 * pos].title} key={pics[4 *  pos].key}/>
+            <Picture src={pics[4 * pos + 1].src} title={pics[4 * pos + 1].title} key={pics[4 *  pos + 1].key}/>
+            <Picture src={pics[4 * pos + 2].src} title={pics[4 * pos + 2].title} key={pics[4 *  pos + 2].key}/>
+            <Picture src={pics[4 * pos + 3].src} title={pics[4 * pos + 3].title} key={pics[4 *  pos + 3].key}/>
         </div>
         <div className={styles.dot}>
-            {/* 
-            <span className={check[0] ? styles.sdot : styles.ndot}></span>
-            <span className={check[1] ? styles.sdot : styles.ndot}></span>
-            <span className={check[2] ? styles.sdot : styles.ndot}></span>
-            */}
             {checks.map((check, index) => (<span className={index === pos ? styles.sdot : styles.ndot}></span>))}
         </div>
         
