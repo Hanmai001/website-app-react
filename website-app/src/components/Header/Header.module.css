@@ -113,33 +113,6 @@
     
 } */
 
-.modal {
-    /* Tương quan với cửa sổ trình duyệt */
-    position: fixed;
-    width: 30%;
-    height: 75%;
-    /* lớp overlay phủ lên */
-    background-color: #fff;
-    display: none;
-}
-.modal.open {
-    /*Cần biến container thành giao diện FLEXBOX để nằm giữa cha MODAL*/
-    display: flex;
-}
-.modalContainer {
-    background: #fff;
-    width: 900px;
-    /*Khi thu nhỏ trình duyệt box nó thu hẹp lại nhưng chừa mỗi bên là 16px */
-    max-width: calc(100% - 32px);
-    /* Đặt tối thiểu vì nếu có thay đổi sẽ tự tăng*/
-    min-height: 200px;
-    /*để sdung pos absolute cho mấy thẻ con */
-    position: relative;
-
-    /* Để sdung keyframes modalFadeIn đi chậm ease 1s*/
-    animation: modalFadeIn ease 1s
-}
-
 .login:hover{
     cursor: pointer;
     color: rgb(76, 59, 59);

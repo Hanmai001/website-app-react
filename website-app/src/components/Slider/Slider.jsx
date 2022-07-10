@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import Picture from "../Picture/Picture";
 import styles from "./Slider.module.css";
 import pics from "./pics";
@@ -24,6 +25,8 @@ function Slider() {
              setPos(pos - 1);
         }
     }
+
+    
     return <div className={styles.slider}>
         <button onClick={decrease} className={styles.buttonl} value={pos}>
             <i className="ti-angle-left"></i>
@@ -31,7 +34,7 @@ function Slider() {
         <button onClick={increase} className={styles.buttonr} value={pos}>
             <i className="ti-angle-right"></i>
         </button>
-        <div className={styles.show}>
+        <div className={clsx(styles.show)}>
             <Picture src={pics[4 * pos].src} title={pics[4 * pos].title} key={pics[4 *  pos].key}/>
             <Picture src={pics[4 * pos + 1].src} title={pics[4 * pos + 1].title} key={pics[4 *  pos + 1].key}/>
             <Picture src={pics[4 * pos + 2].src} title={pics[4 * pos + 2].title} key={pics[4 *  pos + 2].key}/>

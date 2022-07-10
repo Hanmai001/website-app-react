@@ -19,7 +19,7 @@
     height: 30rem;
     align-items: center;
     border-width: 5px;
-    /* Để sdung keyframes modalFadeIn đi chậm ease 0.3s*/
+    /* Để sdung keyframes modalFadeIn đi chậm ease 0.5s*/
     animation: modalFadeIn ease 0.5s
 }   
 

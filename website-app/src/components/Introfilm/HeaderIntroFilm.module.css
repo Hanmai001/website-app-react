@@ -25,25 +25,49 @@
     right: 10rem;
     padding: 0.5rem 0 0.3rem 0;
 }
+
+.header>i {
+    position: absolute;
+    right: 11rem;
+    top: 2.2rem;
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+.header .line {
+    width: 94.8%;
+    color: #f5813e;
+    background-color: #f5813e;
+    font-size: 0.3rem;
+    margin: 0 2.5rem 0 2.5rem;
+    position: absolute;
+    top: 8.2rem;
+    border-radius: 10px;
+}
+
 .header>div {
     position: absolute;
     top: 1.4rem;
     right: 2.6rem;
 }
+
 .header div .login {
     width: auto;
     font-size: 1rem;
     font-weight: 500;
 }
+
 .header div>i {
     font-size: 2rem;
     margin-left: 1.4rem;
 }
-.header div:hover {
+
+/* .header div:hover {
     cursor: pointer;
     color: rgb(76, 59, 59);
+    
+} */
 
+.login:hover {
+    cursor: pointer;
+    color: rgb(76, 59, 59);
 }
-
-
-

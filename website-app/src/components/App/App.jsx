@@ -5,17 +5,16 @@ import HomePage from "../HomePage/HomePage";
 //Page Introfilm
 import Introfilm from "../Introfilm/Introfilm";
 import HeaderIntroFilm from "../Introfilm/HeaderIntroFilm";
-import films from "../Slider/pics";
+import film from "./film";
 
 function App() {
   return (
       <div className="App">
         <GlobalStyle>
-          {/*
-          <HeaderIntroFilm />
-          <Introfilm src={films[0].src} title={films[0].title} key={films[0].key}/>
+        {/*
+          <HomePage />
         */}
-        <HomePage />
+        <Introfilm src={film.src} title={film.title} type={film.type} sumary={film.sumary} year={film.year} nation={film.nation} rate={film.rate} main={film.main} news={film.news} key={film.key}/>
         
       </GlobalStyle>
       </div>
