@@ -34,68 +34,6 @@
     opacity: 0.5;
 }
 
-.nav {
-    display: inline-block;
-    margin: 0 0.5rem 0 0.5rem;
-    position: absolute;
-    top: 6rem;
-}
-
-.nav>li {
-    display: inline-block;
-    font-weight: 700;
-    font-size: 1.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    position: relative;
-}
-
-.nav>li a {
-    text-decoration: none;
-    color: #e1630f;
-}
-
-.nav>li:last-child {
-    padding-right: 0 !important;
-}
-
-.nav>li:hover>a {
-    color: rgb(36, 35, 35);
-    background-color: #ccc;
-    opacity: 0.8;
-}
-
-.nav .subnav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    background-color: #000;
-    opacity: 0.8;
-    /*Bóng đổ cho subnav*/
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.nav li:hover .subnav {
-    display: block;
-}
-
-.nav .subnav li:hover a,
-/*Chỉ tác động lên từng thẻ a(cấp 1) trực tiếp từ thẻ li trực tiếp từ nav */
-/*HOME BAND TOUR CONTACT MORE*/
-.nav .subnav>li:hover {
-    color: #000;
-    background-color: #ccc;
-}
-
-.nav .subnav>li {
-    padding: 0.5rem 1rem 0.5rem 0.5rem;
-}
-
-.nav .subnav a {
-    color: #fff;
-    font-size: 1rem;
-}
-
 .header .line {
     width: 94.8%;
     color: #f5813e;
