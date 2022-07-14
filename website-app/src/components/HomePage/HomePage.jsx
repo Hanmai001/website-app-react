@@ -6,7 +6,7 @@ import LogIn from "../LogIn/LogIn";
 import Slider from "../Slider/Slider";
 
 import styles from "./HomePage.module.css";
-import anime from "./phimhoathinh";
+//import anime from "./phimhoathinh";
 import Picture from "../Picture/Picture";
 import top1 from "./top_nam";
 import top2 from "./top_thang";
@@ -16,15 +16,17 @@ function HomePage() {
   const [login, setLogin] = React.useState(false);
   const [theater, setTheater] = React.useState([]);
   const [phimle, setPhimLe] = React.useState([]);
+  const [anime, setAnime] = React.useState([]);
   React.useEffect(() => {
     const getData = async () => {
       try {
         const res = await axios.get(
           "https://mocki.io/v1/f3cdca9a-37bd-459a-8353-c9ab45eae488"
         );
-        console.log('get data', res.data);
+        console.log("get data", res.data);
         setTheater(res.data.theater);
         setPhimLe(res.data.phimle);
+        setAnime(res.data.phimhoathinh);
       } catch (error) {
         console.log(error);
       }
