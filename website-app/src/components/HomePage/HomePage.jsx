@@ -4,19 +4,18 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import LogIn from "../LogIn/LogIn";
 import Slider from "../Slider/Slider";
-
 import styles from "./HomePage.module.css";
-//import anime from "./phimhoathinh";
 import Picture from "../Picture/Picture";
-import top1 from "./top_nam";
-import top2 from "./top_thang";
-import top3 from "./top_tuan";
+import pics from "../Slider/pics";
 
 function HomePage() {
   const [login, setLogin] = React.useState(false);
   const [theater, setTheater] = React.useState([]);
   const [phimle, setPhimLe] = React.useState([]);
   const [anime, setAnime] = React.useState([]);
+  const [top1, setTopNam] = React.useState([]);
+  const [top2, setTopThang] = React.useState([]);
+  const [top3, setTopTuan] = React.useState([]);
   React.useEffect(() => {
     const getData = async () => {
       try {
@@ -27,6 +26,9 @@ function HomePage() {
         setTheater(res.data.theater);
         setPhimLe(res.data.phimle);
         setAnime(res.data.phimhoathinh);
+        setTopNam(res.data.top_nam);
+        setTopThang(res.data.top_thang);
+        setTopTuan(res.data.top_tuan);
       } catch (error) {
         console.log(error);
       }
@@ -56,7 +58,7 @@ function HomePage() {
                 <span>{index + 1}</span>
                 <img
                   src={pic.src}
-                  title={pic.title}
+                  title={pics.title}
                   key={pic.key}
                   style={{
                     width: "50%",
