@@ -6,7 +6,6 @@ import LogIn from "../LogIn/LogIn";
 import Slider from "../Slider/Slider";
 
 import styles from "./HomePage.module.css";
-import phimle from "./phimle";
 import anime from "./phimhoathinh";
 import Picture from "../Picture/Picture";
 import top1 from "./top_nam";
@@ -16,20 +15,22 @@ import top3 from "./top_tuan";
 function HomePage() {
   const [login, setLogin] = React.useState(false);
   const [theater, setTheater] = React.useState([]);
+  const [phimle, setPhimLe] = React.useState([]);
   React.useEffect(() => {
-    const getPhimCR = async () => {
+    const getData = async () => {
       try {
         const res = await axios.get(
           "https://mocki.io/v1/f3cdca9a-37bd-459a-8353-c9ab45eae488"
         );
-        //console.log('get data', res.data);
-        setTheater(res.data.sliders);
+        console.log('get data', res.data);
+        setTheater(res.data.theater);
+        setPhimLe(res.data.phimle);
       } catch (error) {
         console.log(error);
       }
     };
-    getPhimCR();
-  });
+    getData();
+  }, []);
   function popDown() {
     setLogin(false);
   }
