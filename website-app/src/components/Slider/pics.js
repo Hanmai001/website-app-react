@@ -67,7 +67,7 @@ let pics = [];
 
 //Create fake API
 const resultAPI = axios.get(
-  "https://mocki.io/v1/6e5b0b53-dbf4-47db-a800-4fdbc249a994"
+  "https://mocki.io/v1/f3cdca9a-37bd-459a-8353-c9ab45eae488"
 );
 
 //console.log(resultAPI)
