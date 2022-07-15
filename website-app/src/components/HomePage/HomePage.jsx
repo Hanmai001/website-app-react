@@ -16,9 +16,18 @@ function HomePage() {
   const [top1, setTopNam] = React.useState([]);
   const [top2, setTopThang] = React.useState([]);
   const [top3, setTopTuan] = React.useState([]);
+
+  window.onload = function () {
+    if (!window.location.hash) {
+      window.location = window.location + "#loaded";
+      window.location.reload();
+    }
+  };
   React.useEffect(() => {
+    
     const getData = async () => {
       try {
+        console.log("before getting data");
         const res = await axios.get(
           "https://mocki.io/v1/f3cdca9a-37bd-459a-8353-c9ab45eae488"
         );
