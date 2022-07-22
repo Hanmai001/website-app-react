@@ -1,5 +1,6 @@
 .intro {
     position: relative;
+    margin-bottom: 8rem;
 }
 .intro h1 {
     color:rgb(245, 149, 46);
@@ -172,4 +173,28 @@
     display: inline-block;
     margin: 0.5rem;
     font-weight: 600;
+}
+
+.intro .lstReview .square {
+    right: 55%;
+    padding-bottom: 2rem;
+    position: absolute;
+    bottom: -5rem;
+}
+.intro .lstReview .square > span {
+    color: #f5b38d;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.intro .lstReview .square > button {
+    padding: 0.3rem 0 0 0;
+    background-color: #000;
+    margin: 0 0.5rem 0 0.5rem;
+    font-size: 1rem;
+    color: #f5813e;
+}
+.intro .lstReview .square>button:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }

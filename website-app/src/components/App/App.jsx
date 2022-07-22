@@ -11,7 +11,9 @@ function App() {
   return (
     <div className="App">
       {/*
-         <Introfilm
+        <HomePage />
+      */}
+      <Introfilm
         src={film.src}
         title={film.title}
         type={film.type}
@@ -23,9 +25,6 @@ function App() {
         news={film.news}
         key={film.key}
       />
-          
-      */}
-      <HomePage />
     </div>
   );
 }
