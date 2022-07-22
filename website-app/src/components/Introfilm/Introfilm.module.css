@@ -5,7 +5,7 @@
 .intro h1 {
     color:rgb(245, 149, 46);
     font-size: 1.8rem;
-    margin: 0.5rem 0 0 2.2rem;
+    margin: 0.5rem 0 0 2.5rem;
 }
 .intro .content {
     width: 80%;
@@ -113,10 +113,6 @@
 .intro .side .news .new a>p:hover {
     color: rgb(57, 84, 218);
 }
-
-
-
-
 
 .review {
     background-color: rgb(209, 208, 208);

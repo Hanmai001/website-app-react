@@ -4,7 +4,8 @@ import React from "react";
 import HomePage from "../HomePage/HomePage";
 //Page Introfilm
 import Introfilm from "../Introfilm/Introfilm";
-import HeaderIntroFilm from "../Introfilm/HeaderIntroFilm";
+//Page Review
+import ReviewPage from "../ReviewPage/ReviewPage";
 import film from "./film";
 
 function App() {
@@ -12,8 +13,20 @@ function App() {
     <div className="App">
       {/*
         <HomePage />
+        <Introfilm
+          src={film.src}
+          title={film.title}
+          type={film.type}
+          sumary={film.sumary}
+          year={film.year}
+          nation={film.nation}
+          rate={film.rate}
+          main={film.main}
+          news={film.news}
+          key={film.key}
+        />
       */}
-      <Introfilm
+      <ReviewPage
         src={film.src}
         title={film.title}
         type={film.type}

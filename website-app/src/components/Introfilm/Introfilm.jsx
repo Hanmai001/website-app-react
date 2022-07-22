@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./Introfilm.module.css";
-import HeaderIntroFilm from "./HeaderIntroFilm";
+import HeaderTitle from "../Header/HeaderTitle";
 import LogIn from "../LogIn/LogIn";
 import Picture from "../Picture/Picture";
 import lstReview from "./reviewLst";
@@ -75,7 +75,7 @@ function Introfilm(film) {
 
   return (
     <div>
-      <HeaderIntroFilm log={popUp} />
+      <HeaderTitle log={popUp} />
 
       <div className={styles.intro}>
         <h1 style={{ textTransform: "capitalize" }}>{film.title}</h1>
@@ -85,7 +85,7 @@ function Introfilm(film) {
           </div>
           <iframe
             className={styles.trailer}
-            src="https://www.youtube.com/embed/dd_R1GQwKlY"
+            src={film.trailer}
             title="YouTube video player"
             frameborder="0"
           ></iframe>
