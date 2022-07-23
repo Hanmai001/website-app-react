@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 .pic {}
 
+=======
+.pic {
+}
+>>>>>>> Stashed changes
 .pic p {
     font-size: 1.2rem;
     font-weight: 500;
@@ -8,7 +13,8 @@
     position: relative;
     width: 230px;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    top: -3px;
+    top: -4px;
+    margin: 0 0 0 0 
 }
 
 .pic p:hover {

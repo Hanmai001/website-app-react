@@ -5,12 +5,20 @@ import HomePage from "../HomePage/HomePage";
 import Introfilm from "../Introfilm/Introfilm";
 import HeaderIntroFilm from "../Introfilm/HeaderIntroFilm";
 import film from "./film";
-
+//Personal Profile
+import MemberPage from "../MemberPage/MemberPage";
 function App() {
   return (
     <div className="App">
+<<<<<<< Updated upstream
       {/*
         <Introfilm
+=======
+      
+      {/* <HomePage /> */}
+     
+      {/* <Introfilm
+>>>>>>> Stashed changes
         src={film.src}
         title={film.title}
         type={film.type}
@@ -21,9 +29,14 @@ function App() {
         main={film.main}
         news={film.news}
         key={film.key}
+<<<<<<< Updated upstream
       />
       */}
       <HomePage />
+=======
+      /> */}
+      <MemberPage/>
+>>>>>>> Stashed changes
     </div>
   );
 }
