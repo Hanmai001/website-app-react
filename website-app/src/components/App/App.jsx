@@ -6,6 +6,7 @@ import HomePage from "../HomePage/HomePage";
 import Introfilm from "../Introfilm/Introfilm";
 //Page Review
 import ReviewPage from "../ReviewPage/ReviewPage";
+import MemberPage from "../MemberPage/MemberPage"
 import film from "./film";
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
           key={film.key}
         />
       */}
-      <ReviewPage
+      {/* <ReviewPage
         src={film.src}
         title={film.title}
         type={film.type}
@@ -37,7 +38,8 @@ function App() {
         main={film.main}
         news={film.news}
         key={film.key}
-      />
+      /> */}
+      <MemberPage></MemberPage>
     </div>
   );
 }
