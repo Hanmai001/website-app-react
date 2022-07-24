@@ -7,6 +7,7 @@ import Slider from "../Slider/Slider";
 import styles from "./HomePage.module.css";
 import Picture from "../Picture/Picture";
 import pics from "../Slider/pics";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const [login, setLogin] = React.useState(false);

@@ -31,7 +31,16 @@ function ReviewPage(film) {
   const [like, setLike] = React.useState(lstReview[0].like);
   const [check, setCheck] = React.useState(false);
   const [pos, setPos] = React.useState(0);
+  const [checkOption, setCheckOp] = React.useState(false);
 
+  function clickOption(event) {
+    if (checkOption === false) {
+      setCheckOp(true);
+    } else {
+      setCheckOp(false);
+    }
+    event.preventDefault();
+  }
   function increase() {
     if (pos < num_page - 1) {
       setPos(pos + 1);
@@ -60,11 +69,24 @@ function ReviewPage(film) {
         <h1 style={{ textTransform: "capitalize" }}>{film.title}</h1>
       </div>
       <div className={styles.content}>
+        <ul onClick={clickOption} className={styles.option}>
+          <li>
+            <i className="fa-solid fa-ellipsis"></i>
+            {checkOption ? (
+              <ul className={styles.choices}>
+                <li>Báo cáo</li>
+                <li>Xóa bài viết</li>
+              </ul>
+            ) : null}
+          </li>
+        </ul>
+
         <div className={styles.review}>
           <div className={styles.ava}>
             <img src="https://upanh123.com/wp-content/uploads/2020/11/anh-tho-chibi.0.jpg" />
             <p>{lstReview[0].user}</p>
           </div>
+
           <div className={styles.sumr}>
             <h1>{lstReview[0].title}</h1>
             <h2>Ngày đăng: {lstReview[0].time}</h2>

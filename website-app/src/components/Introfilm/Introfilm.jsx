@@ -1,4 +1,6 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+
 import clsx from "clsx";
 import styles from "./Introfilm.module.css";
 import HeaderTitle from "../Header/HeaderTitle";
@@ -36,12 +38,26 @@ function ReviewSumary(props) {
     </div>
   );
 }
-function Introfilm(film) {
-  const nvat = film.main;
-  const news = film.news;
+function Introfilm() {
   const [login, setLogin] = React.useState(false);
   const [pos, setPos] = React.useState(0);
   const [check, setCheck] = React.useState(false);
+
+  const location = useLocation();
+  const {
+    key,
+    title,
+    src,
+    type,
+    year,
+    nation,
+    sumary,
+    trailer,
+    rate,
+    main,
+    news,
+  } = location.state; // "useLocation" to get the state
+
   function clickContent(event) {
     if (check === false) {
       setCheck(true);
@@ -78,41 +94,41 @@ function Introfilm(film) {
       <HeaderTitle log={popUp} />
 
       <div className={styles.intro}>
-        <h1 style={{ textTransform: "capitalize" }}>{film.title}</h1>
+        <h1 style={{ textTransform: "capitalize" }}>{title}</h1>
         <div className={styles.content}>
           <div className={styles.photo}>
-            <Picture src={film.src} title={""} />
+            <Picture src={src} title={""} />
           </div>
           <iframe
             className={styles.trailer}
-            src={film.trailer}
+            src={trailer}
             title="YouTube video player"
             frameborder="0"
           ></iframe>
           <div className={styles.lstInfo}>
             <p className={styles.info}>
               Tên phim:
-              <span>{film.title}</span>
+              <span>{title}</span>
             </p>
             <p className={styles.info}>
               Thể loại:
-              <span>{film.type}</span>
+              <span>{type}</span>
             </p>
             <p className={styles.info}>
               Năm sản xuất:
-              <span>{film.year}</span>
+              <span>{year}</span>
             </p>
             <p className={styles.info}>
               Quốc gia:
-              <span>{film.nation}</span>
+              <span>{nation}</span>
             </p>
             <p className={styles.info}>
               Nội dung:
               <span>
-                {film.sumary.length > 70 && !check
-                  ? film.sumary.slice(0, 300) + "..."
-                  : film.sumary + "..."}
-                {film.sumary.length > 70 && !check ? (
+                {sumary.length > 70 && !check
+                  ? sumary.slice(0, 300) + "..."
+                  : sumary + "..."}
+                {sumary.length > 70 && !check ? (
                   <a
                     href="/"
                     style={{ color: "rgb(127, 162, 243)" }}
@@ -138,7 +154,7 @@ function Introfilm(film) {
             <i className="ti-star"></i>
             <i className="ti-star"></i>
             <i className="ti-star"></i>
-            <span>Rating: {film.rate}</span>
+            <span>Rating: {rate}</span>
           </div>
           <div className={styles.lstReview}>
             <p>Top review</p>
@@ -181,7 +197,7 @@ function Introfilm(film) {
           <div className={styles.artist}>
             <p>Nhân vật/Diễn viên</p>
             <p className={styles.line}>none</p>
-            {nvat.map((item) => (
+            {main.map((item) => (
               <div className={styles.nvat}>
                 <img src={item.img}></img>
                 <p>{item.name}</p>

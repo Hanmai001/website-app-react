@@ -3,8 +3,10 @@ import styles from "./HeaderTitle.module.css";
 function HeaderTitle(props) {
   return (
     <header className={styles.header}>
-      <h1>DONGREVIEW</h1>
-      <input placeholder="  Tìm kiếm"></input>
+      <a href="/">
+        <h1>DONGREVIEW</h1>
+      </a>
+      <input placeholder="Tìm kiếm"></input>
       <i className="ti-search"></i>
       <div
         className={styles.login}

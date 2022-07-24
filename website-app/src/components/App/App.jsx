@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 //Page Homepage
 import HomePage from "../HomePage/HomePage";
@@ -10,35 +11,34 @@ import film from "./film";
 
 function App() {
   return (
-    <div className="App">
-      {/*
-        <HomePage />
-        <Introfilm
-          src={film.src}
-          title={film.title}
-          type={film.type}
-          sumary={film.sumary}
-          year={film.year}
-          nation={film.nation}
-          rate={film.rate}
-          main={film.main}
-          news={film.news}
-          key={film.key}
-        />
-      */}
-      <ReviewPage
-        src={film.src}
-        title={film.title}
-        type={film.type}
-        sumary={film.sumary}
-        year={film.year}
-        nation={film.nation}
-        rate={film.rate}
-        main={film.main}
-        news={film.news}
-        key={film.key}
-      />
-    </div>
+    <Router>
+      <Fragment>
+        <div>
+          <Routes>
+            <Route exact path="/" element={<HomePage />}></Route>
+            <Route exact path="/introfilm" element={<Introfilm />}></Route>
+            <Route
+              exact
+              path="/reviewpage"
+              element={
+                <ReviewPage
+                  src={film.src}
+                  title={film.title}
+                  type={film.type}
+                  sumary={film.sumary}
+                  year={film.year}
+                  nation={film.nation}
+                  rate={film.rate}
+                  main={film.main}
+                  news={film.news}
+                  key={film.key}
+                />
+              }
+            ></Route>
+          </Routes>
+        </div>
+      </Fragment>
+    </Router>
   );
 }
 

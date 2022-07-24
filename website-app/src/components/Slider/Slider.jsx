@@ -1,4 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+//test
+import film from "../App/film";
+
 import axios from "axios";
 import clsx from "clsx";
 import Picture from "../Picture/Picture";
@@ -46,26 +50,30 @@ function Slider() {
         <i className="ti-angle-right"></i>
       </button>
       <div className={clsx(styles.show)}>
-        <Picture
-          src={pics[4 * pos].src}
-          title={pics[4 * pos].title}
-          key={pics[4 * pos].key}
-        />
-        <Picture
-          src={pics[4 * pos + 1].src}
-          title={pics[4 * pos + 1].title}
-          key={pics[4 * pos + 1].key}
-        />
-        <Picture
-          src={pics[4 * pos + 2].src}
-          title={pics[4 * pos + 2].title}
-          key={pics[4 * pos + 2].key}
-        />
-        <Picture
-          src={pics[4 * pos + 3].src}
-          title={pics[4 * pos + 3].title}
-          key={pics[4 * pos + 3].key}
-        />
+        {pics.map((pic, index) => {
+          if (index >= 4 * pos && index <= 4 * pos + 3) {
+            return (
+              <Link
+                to="/introfilm"
+                state={{
+                  key: film.key,
+                  title: film.title,
+                  src: film.src,
+                  type: film.type,
+                  year: film.year,
+                  nation: film.nation,
+                  sumary: film.sumary,
+                  trailer: film.trailer,
+                  rate: film.rate,
+                  main: film.main,
+                  news: film.news,
+                }}
+              >
+                <Picture src={pic.src} title={pic.title} key={pic.key} />
+              </Link>
+            );
+          }
+        })}
       </div>
       <div className={styles.dot}>
         {checks.map((check, index) => (
