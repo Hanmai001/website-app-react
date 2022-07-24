@@ -7,8 +7,6 @@ import HomePage from "../HomePage/HomePage";
 import Introfilm from "../Introfilm/Introfilm";
 //Page Review
 import ReviewPage from "../ReviewPage/ReviewPage";
-import MemberPage from "../MemberPage/MemberPage"
-import film from "./film";
 
 function App() {
   return (
@@ -18,24 +16,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<HomePage />}></Route>
             <Route exact path="/introfilm" element={<Introfilm />}></Route>
-            <Route
-              exact
-              path="/reviewpage"
-              element={
-                <ReviewPage
-                  src={film.src}
-                  title={film.title}
-                  type={film.type}
-                  sumary={film.sumary}
-                  year={film.year}
-                  nation={film.nation}
-                  rate={film.rate}
-                  main={film.main}
-                  news={film.news}
-                  key={film.key}
-                />
-              }
-            ></Route>
+            <Route exact path="/reviewpage" element={<ReviewPage />}></Route>
           </Routes>
         </div>
       </Fragment>

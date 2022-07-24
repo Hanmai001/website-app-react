@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import clsx from "clsx";
 import styles from "./Introfilm.module.css";
@@ -26,7 +26,21 @@ function ReviewSumary(props) {
         <h1>{props.title}</h1>
         <p>
           {content}
-          <a href="/">Xem thêm</a>
+          <Link
+            to="/reviewpage"
+            state={{
+              key: props.key,
+              user: props.user,
+              title: props.title,
+              content: props.content,
+              like: props.like,
+              share: props.share,
+              cmt: props.cmt,
+              time: props.time,
+            }}
+          >
+            <a href="/">Xem thêm</a>
+          </Link>
         </p>
       </div>
       <div className={styles.icon}>
@@ -169,6 +183,7 @@ function Introfilm() {
                     share={item.share}
                     cmt={item.cmt}
                     content={item.content}
+                    time={item.time}
                   />
                 );
               }

@@ -1,11 +1,9 @@
 import React from "react";
-import clsx from "clsx";
+import { useLocation } from "react-router-dom";
 import styles from "./ReviewPage.module.css";
 import HeaderTitle from "../Header/HeaderTitle";
 import LogIn from "../LogIn/LogIn";
-import Picture from "../Picture/Picture";
 import Footer from "../Footer/Footer";
-import lstReview from "../Introfilm/reviewLst";
 import cmts from "./cmts";
 
 var pages = [];
@@ -24,11 +22,12 @@ function Comment(props) {
   );
 }
 
-function ReviewPage(film) {
-  const nvat = film.main;
-  const news = film.news;
+function ReviewPage() {
+  const location = useLocation();
+  const { key, user, title, content, like, share, cmt, time } = location.state;
+
   const [login, setLogin] = React.useState(false);
-  const [like, setLike] = React.useState(lstReview[0].like);
+  const [num_like, setLike] = React.useState(like);
   const [check, setCheck] = React.useState(false);
   const [pos, setPos] = React.useState(0);
   const [checkOption, setCheckOp] = React.useState(false);
@@ -55,18 +54,21 @@ function ReviewPage(film) {
   function clickLike(event) {
     if (check === false) {
       setCheck(true);
-      setLike(like + 1);
+      setLike(num_like + 1);
     } else {
       setCheck(false);
-      setLike(like - 1);
+      setLike(num_like - 1);
     }
-    //event.preventDefault();
+    event.preventDefault();
+  }
+  function postCmt() {
+    console.log("Posted CMT");
   }
   return (
     <div className={styles.reviewPage}>
       <HeaderTitle log={popUp} />
       <div className={styles.intro}>
-        <h1 style={{ textTransform: "capitalize" }}>{film.title}</h1>
+        <h1 style={{ textTransform: "capitalize" }}>{title}</h1>
       </div>
       <div className={styles.content}>
         <ul onClick={clickOption} className={styles.option}>
@@ -84,25 +86,23 @@ function ReviewPage(film) {
         <div className={styles.review}>
           <div className={styles.ava}>
             <img src="https://upanh123.com/wp-content/uploads/2020/11/anh-tho-chibi.0.jpg" />
-            <p>{lstReview[0].user}</p>
+            <p>{user}</p>
           </div>
 
           <div className={styles.sumr}>
-            <h1>{lstReview[0].title}</h1>
-            <h2>Ngày đăng: {lstReview[0].time}</h2>
-            <p>{lstReview[0].content}</p>
+            <h1>{title}</h1>
+            <h2>Ngày đăng: {time}</h2>
+            <p>{content}</p>
             <div className={styles.icon}>
-              <p>{like}</p>
+              <p>{num_like}</p>
               {check ? (
                 <i onClick={clickLike} className="fa-solid fa-heart"></i>
               ) : (
                 <i onClick={clickLike} className="ti-heart"></i>
               )}
 
-              <p>{lstReview[0].cmt}</p>
-              <a href="#mycmt">
-                <i className="ti-comment"></i>
-              </a>
+              <p>{cmt}</p>
+              <i className="ti-comment"></i>
             </div>
           </div>
         </div>
@@ -111,14 +111,25 @@ function ReviewPage(film) {
           <div className={styles.writeCmt}>
             <div className={styles.ava}>
               <img src="https://upanh123.com/wp-content/uploads/2020/11/anh-tho-chibi.0.jpg" />
-              <p>{lstReview[0].user}</p>
+              <p>{user}</p>
             </div>
             <textarea
-              id="mycmt"
+              onKeyDown={(event) => {
+                if (event.shiftKey === true) {
+                  event.target.value = event.target.value + "\n";
+                }
+                else if (event.key === "Enter") {
+                  postCmt();
+                }
+                
+              }}
               rows="6"
               maxLength="1000"
               placeholder="Viết bình luận của bạn"
             ></textarea>
+            <button onClick={postCmt} id="post_cmt">
+              Đăng
+            </button>
           </div>
           {cmts.map((item, index) => {
             if (index <= 8 * pos + 7) {

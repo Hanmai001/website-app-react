@@ -75,10 +75,9 @@
     text-decoration: none;
     color: #000;
 }
-.review .icon>i:hover {
+.review .icon>i {
     cursor: pointer;
 }
-
 .reviewPage .content .lstCmt {
     margin-bottom: 6rem;
     margin-top: 5rem;
@@ -144,6 +143,22 @@
     font-size: 1rem;
     padding: 1rem;
 }
+.reviewPage .writeCmt > button {
+    position: relative;
+    top: 1.8rem;
+    right: -5.6rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    background-color: rgb(205, 209, 213);
+    border-width: 0.5px;
+    border-radius: 5px;
+}
+.reviewPage .writeCmt>button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
 lord-icon {
     width: 100px;
     height: 100px;
