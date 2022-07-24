@@ -7,6 +7,7 @@ import HomePage from "../HomePage/HomePage";
 import Introfilm from "../Introfilm/Introfilm";
 //Page Review
 import ReviewPage from "../ReviewPage/ReviewPage";
+import MemberPage from "../MemberPage/MemberPage"
 import film from "./film";
 
 function App() {
