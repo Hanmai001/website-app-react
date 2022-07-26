@@ -11,10 +11,12 @@ import ReviewPage from "../ReviewPage/ReviewPage";
 import MemberPage from "../ProfilePage/MemberPage";
 import AdminPage from "../ProfilePage/AdminPage";
 import SignUp from "../SignUp/SignUp"
+import ForgotPassword from "../ForgotPassword/ForgotPassword";
 
 function App() {
   return (
-      <SignUp></SignUp>
+      <ForgotPassword/>
+      // <SignUp/>
     // <Router>
     //   <Fragment>
     //     <div>
@@ -24,7 +26,7 @@ function App() {
     //         <Route exact path="/reviewpage" element={<ReviewPage />}></Route>
     //       </Routes>
     //     </div>
-    //   </Fragment>
+    //   </Fragment>z
     // </Router>
   );
 }
