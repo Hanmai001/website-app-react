@@ -11,20 +11,8 @@ import pics from "./pics";
 
 const checks = [0, 1, 2];
 function Slider() {
+ 
   const [pos, setPos] = React.useState(0);
-  // const [pics, setPics] = React.useState([])
-
-  // React.useEffect(() => {
-  //   console.log(pics);
-  //   const getSliders = async () => {
-  //     const res = await axios.get(
-  //       "https://mocki.io/v1/f3cdca9a-37bd-459a-8353-c9ab45eae488"
-  //     );
-  //     console.log("get data", res.data);
-  //     setPics(res.data.sliders);
-  //   };
-  //   getSliders();
-  // }, []);
 
   function increase() {
     if (pos === 2) {
