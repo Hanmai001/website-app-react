@@ -29,7 +29,7 @@ function AdminPage() {
             <p>Mật khẩu: haimaitretrau2k2</p>
             <a href="/"> Chỉnh sửa</a>
           </div>
-          <a className={styles.addFilm} href="">
+          <a className={styles.addFilm} href="/admin/addfilm">
             Thêm phim
           </a>
         </div>

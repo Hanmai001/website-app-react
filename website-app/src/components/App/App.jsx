@@ -12,6 +12,7 @@ import MemberPage from "../ProfilePage/MemberPage";
 import AdminPage from "../ProfilePage/AdminPage";
 import SignUp from "../SignUp/SignUp";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
+import AddFilm from "../AddFilm/AddFilm";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/admin" element={<AdminPage />}></Route>
             <Route exact path="/member" element={<MemberPage />}></Route>
             <Route exact path="/forgotpassword" element={<ForgotPassword />}></Route>
+            <Route exact path="/admin/addfilm" element={<AddFilm />}></Route>
           </Routes>
         </div>
       </Fragment>
