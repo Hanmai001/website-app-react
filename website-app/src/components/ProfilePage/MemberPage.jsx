@@ -19,7 +19,7 @@ function MemberPage(){
                     <h1> TRANG CÁ NHÂN</h1>
                 </div>
                 <div className={styles.layer2}>
-                    <p className={styles.name}>Đông Thức</p>
+                    <p className={styles.name}>Ngô Đông Thức Nguyên</p>
                     <div className={styles.detail}>
                        <p>Tên đăng nhập: hanmaihaihuoc</p>
                        <p>Email: hanmaingunoc@gmail.com</p>
