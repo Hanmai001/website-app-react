@@ -106,6 +106,42 @@ function AdminPage() {
           />
         </div>
       </div>
+      <div className={styles.tag_container}>
+        <a className={styles.tag} href="">
+          {" "}
+          &#x2023; Danh sách bài review
+        </a>
+        <a className={styles.more} href="">
+          {" "}
+          Xem thêm...{" "}
+        </a>
+      </div>
+      <div className={styles.content}>
+        <div className={styles.item}>
+          <Picture src={pics[0].src} title={pics[0].title} key={pics[0].key} />
+        </div>
+        <div className={styles.item}>
+          <Picture
+            src={pics[0 + 1].src}
+            title={pics[0 + 1].title}
+            key={pics[0 + 1].key}
+          />
+        </div>
+        <div className={styles.item}>
+          <Picture
+            src={pics[0 + 2].src}
+            title={pics[0 + 2].title}
+            key={pics[0 + 2].key}
+          />
+        </div>
+        <div className={styles.item}>
+          <Picture
+            src={pics[0 + 3].src}
+            title={pics[0 + 3].title}
+            key={pics[0 + 3].key}
+          />
+        </div>
+      </div>
       <Footer></Footer>
     </div>
   );
