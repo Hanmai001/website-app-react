@@ -1,17 +1,14 @@
 import React from 'react';
 import styles from "./ProfilePage.module.css";
 import clsx from "clsx";
-import ProfileHeader from '../Header/ProfileHeader';
 import Picture from '../Picture/Picture';
 import Footer from '../Footer/Footer';
-import Slider from '../Slider/Slider';
 import pics from '../Slider/pics';
 
 function AdminPage(){
     return (
         <div>
-            
-            <ProfileHeader></ProfileHeader>
+          <Header></Header>
             <div className={styles.mainInfo}>
                 <div className={styles.layer1}>
                     <div className={styles.avatar}>

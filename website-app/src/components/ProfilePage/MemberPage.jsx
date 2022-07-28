@@ -1,16 +1,16 @@
 import React from 'react';
 import styles from "./ProfilePage.module.css";
 import clsx from "clsx";
-import ProfileHeader from '../Header/ProfileHeader';
 import Picture from '../Picture/Picture'
 import pics from '../Slider/pics'
 import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 
 
 function MemberPage(){
     return (
         <div>
-            <ProfileHeader></ProfileHeader>
+            <Header></Header>
             <div className={styles.mainInfo}>
                 <div className={styles.layer1}>
                     <div className={styles.avatar}>
