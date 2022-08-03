@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
 
 import clsx from "clsx";
@@ -6,21 +7,21 @@ import styles from "./Introfilm.module.css";
 import HeaderTitle from "../Header/HeaderTitle";
 import LogIn from "../LogIn/LogIn";
 import Picture from "../Picture/Picture";
-import lstReview from "./reviewLst";
 import Footer from "../Footer/Footer";
 
 var pages = [];
-var num_page = Math.ceil(lstReview.length / 5);
+var num_page = 0;
 for (var i = 0; i < num_page; i++) pages.push(i + 1);
 
 function ReviewSumary(props) {
   let content = props.content;
   content = content.slice(0, 200) + "...";
+
   return (
     <div className={styles.review}>
       <div className={styles.ava}>
-        <img src="https://upanh123.com/wp-content/uploads/2020/11/anh-tho-chibi.0.jpg" />
-        <p>{props.user}</p>
+        <img src={props.avt} />
+        <p>{props.fullname}</p>
       </div>
       <div className={styles.sumr}>
         <h1>{props.title}</h1>
@@ -29,8 +30,9 @@ function ReviewSumary(props) {
           <Link
             to="/reviewpage"
             state={{
-              key: props.key,
-              user: props.user,
+              reviewID: props.reviewID,
+              filmID: props.filmID,
+              userID: props.userID,
               title: props.title,
               content: props.content,
               like: props.like,
@@ -39,7 +41,7 @@ function ReviewSumary(props) {
               time: props.time,
             }}
           >
-            <a href="/">Xem thêm</a>
+            Xem thêm
           </Link>
         </p>
       </div>
@@ -55,37 +57,68 @@ function ReviewSumary(props) {
 
 const stars = [0, 1, 2, 3, 4];
 function Introfilm() {
+  const url1 = "/api/news.json";
+  const url2 = "/api/reviews.json";
+  const url3 = "/api/users.json";
+  const [users, setUser] = React.useState([]);
   const [login, setLogin] = React.useState(false);
   const [pos, setPos] = React.useState(0);
   const [check, setCheck] = React.useState(false);
   const [checkLike, setCheckL] = React.useState(false);
   const [rateFilm, setRate] = React.useState(0);
+  const [arr_new, setNews] = React.useState([]);
+  const [lstReview, setReviews] = React.useState([]);
 
   const location = useLocation();
-  const {
-    key,
-    title,
-    src,
-    type,
-    year,
-    nation,
-    sumary,
-    trailer,
-    rate,
-    main,
-    news,
-  } = location.state; // "useLocation" to get the state
+  const { filmID, title, src, type, year, nation, sumary, trailer, rate, main } =
+    location.state; // "useLocation" to get the state
 
+  React.useEffect(() => {
+    console.log("filmID: ", filmID);
+    const getData = async () => {
+      try {
+        console.log("before getting data");
+        const res1 = await axios.get(url1);
+        const res2 = await axios.get(url2);
+        const res3 = await axios.get(url3);
+        console.log("get users", res3.data);
+        console.log("get news", res1.data);
+        console.log("get reviews", res2.data);
+        let count = 0;
+        const rv = res2.data.filter((item) => {
+          if (item.filmID === filmID) {
+            return true;
+          }
+        });
+        num_page = Math.ceil(rv.length / 5);
+        setNews(
+          res1.data.filter((item) => {
+            if (item.filmID === filmID && count <= 4) {
+              count++;
+              return true;
+            }
+          })
+        );
+        console.log("rv_lst: ", rv);
+        setReviews(rv);
+        setUser(res3.data);
+        
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
+  }, []);
   function clickStar(index) {
     setRate(index + 1);
   }
   function clickLike(event) {
-      if (checkLike === false) {
-        setCheckL(true);
-      } else {
-        setCheckL(false);
-      }
-      event.preventDefault();
+    if (checkLike === false) {
+      setCheckL(true);
+    } else {
+      setCheckL(false);
+    }
+    event.preventDefault();
   }
   function clickContent(event) {
     if (check === false) {
@@ -95,21 +128,25 @@ function Introfilm() {
     }
     event.preventDefault();
   }
-  function increase() {
+  function increase(event) {
     if (pos < num_page - 1) {
       setPos(pos + 1);
     }
+    event.preventDefault();
   }
-  function decrease() {
+  function decrease(event) {
     if (pos > 0) {
       setPos(pos - 1);
     }
+    event.preventDefault();
   }
-  function setBegin() {
+  function setBegin(event) {
     setPos(0);
+    event.preventDefault();
   }
-  function setEnd() {
+  function setEnd(event) {
     setPos(num_page - 1);
+    event.preventDefault();
   }
   function popDown() {
     setLogin(false);
@@ -188,8 +225,7 @@ function Introfilm() {
                     className="ti-star"
                   ></i>
                 );
-              }
-              else {
+              } else {
                 return (
                   <i
                     onClick={() => {
@@ -200,8 +236,7 @@ function Introfilm() {
                 );
               }
             })}
-            
-            
+
             <span>Rating: {rateFilm}/5</span>
           </div>
           <div className={styles.lstReview}>
@@ -223,8 +258,14 @@ function Introfilm() {
               if (index >= 5 * pos && index <= 5 * pos + 4) {
                 return (
                   <ReviewSumary
-                    user={item.user}
-                    key={item.key}
+                    reviewID={item._id}
+                    key={item._id}
+                    filmID={item.filmID}
+                    userID={item.userID}
+                    fullname={
+                      users.find((user) => user._id === item.userID).fullname
+                    }
+                    avt={users.find((user) => user._id === item.userID).avt}
                     title={item.title}
                     like={item.like}
                     share={item.share}
@@ -269,7 +310,7 @@ function Introfilm() {
           <div className={styles.news}>
             <p className={styles.extra}>Tin tức liên quan</p>
             <p className={styles.line}>none</p>
-            {news.map((item, index) => (
+            {arr_new.map((item, index) => (
               <div className={styles.new}>
                 <a href={item.src} target="_blank" rel="noopener noreferrer">
                   <img alt="" src={item.img} width="150" height="90" />

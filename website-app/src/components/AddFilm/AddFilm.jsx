@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./AddFilm.module.css";
 import clsx from "clsx";
+import axios from "axios";
 
 function AddFilm() {
-  const [input_arr, setArr] = React.useState([0])
+  //const url = "/api/data";
+  const [input_arr, setArr] = React.useState([0]);
+  const [film, setFilm] = React.useState({});
   function addCharacter(event) {
-    setArr((prev) => [...prev, 0])
+    setArr((prev) => [...prev, 0]);
     event.preventDefault();
   }
   function Character(props) {
@@ -21,6 +24,28 @@ function AddFilm() {
       </div>
     );
   }
+
+  async function handleClick(event) {
+    event.preventDefault();
+    try {
+      let rs = await fetch(
+        "https://mocki.io/v1/aeef2834-c670-4dcc-93d8-b131b195c877",
+        {
+          method: "post",
+          mode: "no-cors",
+          headers: {
+            "Accept": "application/json",
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            key1: "myusername",
+          }),
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className={styles.modal}>
       <div className={styles.modalContainer}>
@@ -35,23 +60,23 @@ function AddFilm() {
         <div className={styles.input}>
           <p>Source ảnh: </p>
           <p>*</p>
-          <input type="text" placeholder="Tên đăng nhập"></input>
+          <input type="text" placeholder="Nhập link ảnh"></input>
           <p className={styles.trailer}>Link trailer: </p>
           <p>*</p>
-          <input type="text" placeholder="Tên đăng nhập"></input>
+          <input type="text" placeholder="Nhập link trailer"></input>
         </div>
         <div className={styles.input}>
           <p>Thể loại: </p>
           <p>*</p>
-          <input type="text" placeholder="Tên đăng nhập"></input>
+          <input type="text" placeholder="Nhập thể loại"></input>
           <p className={styles.year}>Năm sản xuất:</p>
           <p>*</p>
-          <input type="text" placeholder="Tên đăng nhập"></input>
+          <input type="text" placeholder="Nhập năm sản xuất"></input>
         </div>
         <div className={styles.input}>
           <p>Quốc gia:</p>
           <p>*</p>
-          <input type="text" placeholder="Tên đăng nhập"></input>
+          <input type="text" placeholder="Nhập quốcgia"></input>
         </div>
         <div className={clsx(styles.input, styles.content)}>
           <p>Nội dung:</p>
@@ -63,40 +88,42 @@ function AddFilm() {
             placeholder="Nhập nội dung"
           ></textarea>
         </div>
-        {input_arr.map((item, index) => (<Character index={index}/>))}
+        {input_arr.map((item, index) => (
+          <Character index={index} />
+        ))}
 
         <div className={styles.input}>
           <p>Link tin tức 1: </p>
           <p>*</p>
-          <input type="text" placeholder="Tên đăng nhập"></input>
+          <input type="text" placeholder="Nhập link tin tức 1"></input>
         </div>
         <div className={styles.input}>
           <p>Link tin tức 2 </p>
           <p>*</p>
-          <input type="text" placeholder="Tên đăng nhập"></input>
+          <input type="text" placeholder="Nhập link tin tức 2"></input>
         </div>
         <div className={styles.input}>
           <p>Link tin tức 3: </p>
           <p>*</p>
-          <input type="text" placeholder="Tên đăng nhập"></input>
+          <input type="text" placeholder="Nhập link tin tức 3"></input>
         </div>
         <div className={styles.input}>
           <p>Link tin tức 4: </p>
           <p>*</p>
-          <input type="text" placeholder="Tên đăng nhập"></input>
+          <input type="text" placeholder="Nhập link tin tức 4"></input>
         </div>
         <div className={styles.input}>
           <p>Link tin tức 5: </p>
           <p>*</p>
-          <input type="text" placeholder="Tên đăng nhập"></input>
+          <input type="text" placeholder="Nhập link tin tức 5"></input>
         </div>
 
         <div className={styles.addFilm}>
-          <button>
-            <a href="/">Thêm phim</a>
+          <button onClick={(e) => handleClick(e)}>
+            <a href="/admin/addfilm">Thêm phim</a>
           </button>
           <button>
-            <a href="/">Hủy</a>
+            <a href="/admin">Hủy</a>
           </button>
         </div>
       </div>

@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 //test
-import film from "../App/film";
 
-import axios from "axios";
 import clsx from "clsx";
 import Picture from "../Picture/Picture";
 import styles from "./Slider.module.css";
@@ -11,7 +9,6 @@ import pics from "./pics";
 
 const checks = [0, 1, 2];
 function Slider() {
- 
   const [pos, setPos] = React.useState(0);
 
   function increase() {
@@ -44,20 +41,20 @@ function Slider() {
               <Link
                 to="/introfilm"
                 state={{
-                  key: film.key,
-                  title: film.title,
-                  src: film.src,
-                  type: film.type,
-                  year: film.year,
-                  nation: film.nation,
-                  sumary: film.sumary,
-                  trailer: film.trailer,
-                  rate: film.rate,
-                  main: film.main,
-                  news: film.news,
+                  key: pic._id,
+                  filmID: pic._id,
+                  title: pic.title,
+                  src: pic.src,
+                  type: pic.type,
+                  year: pic.year,
+                  nation: pic.nation,
+                  sumary: pic.sumary,
+                  trailer: pic.trailer,
+                  rate: pic.rate,
+                  main: pic.main,
                 }}
               >
-                <Picture src={pic.src} title={pic.title} key={pic.key} />
+                <Picture src={pic.src} title={pic.title} key={pic._id} />
               </Link>
             );
           }

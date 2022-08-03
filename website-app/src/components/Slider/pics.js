@@ -66,14 +66,11 @@ import axios from "axios";
 let pics = [];
 
 //Create fake API
-const resultAPI = axios.get(
-  "https://mocki.io/v1/f3cdca9a-37bd-459a-8353-c9ab45eae488"
-);
+const resultAPI = axios.get("/api/films.json");
 
 //console.log(resultAPI)
 resultAPI.then((res) => {
-  for (var i = 0; i < res.data.sliders.length; i++)
-    pics.push(res.data.sliders[i]);
+  for (var i = 0; i < 12; i++) pics.push(res.data[i]);
 });
 
 export default pics;
