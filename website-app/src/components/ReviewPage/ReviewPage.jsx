@@ -46,7 +46,7 @@ function FormReport(props) {
         <div className={styles.head}>
           <h2>BÁO CÁO</h2>
         </div>
-        <p style={{ marginTop: "4rem" }}>Cho mình biết lí do à gì đi^^</p>
+        <p style={{ marginTop: "4rem" }}>Cho mình biết lí do là gì đi^^</p>
         <textarea
           rows="6"
           maxLength="1000"

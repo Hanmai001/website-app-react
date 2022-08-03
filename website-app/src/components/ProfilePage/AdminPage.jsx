@@ -23,7 +23,6 @@ function AdminPage() {
         <div className={styles.layer2}>
           <p className={styles.name}>Đông Thức</p>
           <div className={styles.detail}>
-            <p>Tên đăng nhập: hanmaihaihuoc</p>
             <p>Email: hanmaingunoc@gmail.com</p>
             <p>Nicname: Trần Gia Hân Mai</p>
             <p>Mật khẩu: haimaitretrau2k2</p>
@@ -74,6 +73,42 @@ function AdminPage() {
         <a className={styles.tag} href="">
           {" "}
           &#x2023; Tố cáo
+        </a>
+        <a className={styles.more} href="">
+          {" "}
+          Xem thêm...{" "}
+        </a>
+      </div>
+      <div className={styles.content}>
+        <div className={styles.item}>
+          <Picture src={pics[0].src} title={pics[0].title} key={pics[0].key} />
+        </div>
+        <div className={styles.item}>
+          <Picture
+            src={pics[0 + 1].src}
+            title={pics[0 + 1].title}
+            key={pics[0 + 1].key}
+          />
+        </div>
+        <div className={styles.item}>
+          <Picture
+            src={pics[0 + 2].src}
+            title={pics[0 + 2].title}
+            key={pics[0 + 2].key}
+          />
+        </div>
+        <div className={styles.item}>
+          <Picture
+            src={pics[0 + 3].src}
+            title={pics[0 + 3].title}
+            key={pics[0 + 3].key}
+          />
+        </div>
+      </div>
+      <div className={styles.tag_container}>
+        <a className={styles.tag} href="">
+          {" "}
+          &#x2023; Danh sách phim đã đăng
         </a>
         <a className={styles.more} href="">
           {" "}
