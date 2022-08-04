@@ -14,10 +14,13 @@ import SignUp from "../SignUp/SignUp";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import AddFilm from "../AddFilm/AddFilm";
 import AddReview from "../AddReview/AddReview";
+import Page404 from "../ErrorPages/404";
+import Page502 from "../ErrorPages/502";
+import FindPage from "../FindPage/FindPage";
 
 function App() {
   return (
-    <AdminPage/>
+    <FindPage/>
     // <Router>
     //   <Fragment>  
     //     <div>
