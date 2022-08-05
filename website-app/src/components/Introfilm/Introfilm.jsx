@@ -154,13 +154,22 @@ function Introfilm() {
   function popUp() {
     setLogin(true);
   }
-
   return (
     <div>
       <HeaderTitle log={popUp} />
-
       <div className={styles.intro}>
         <h1 style={{ textTransform: "capitalize" }}>{title}</h1>
+        <div className={styles.options}>
+              <ul className={styles.expose}>
+                  <li>
+                    <a>Xóa phim</a>
+                  </li>
+                  <li>
+                    <a>Chỉnh sửa phim</a>
+                  </li>
+              </ul>
+                <button className={clsx("ti-more",styles.opbutton)}></button>
+            </div>
         <div className={styles.content}>
           <div className={styles.photo}>
             <Picture src={src} title={""} />

@@ -17,31 +17,34 @@ import AddReview from "../AddReview/AddReview";
 import Page404 from "../ErrorPages/404";
 import Page502 from "../ErrorPages/502";
 import FindPage from "../FindPage/FindPage";
+import EditFilm from "../EditFilm/EditFilm";
 
 function App() {
   return (
-    <FindPage/>
-    // <Router>
-    //   <Fragment>  
-    //     <div>
-    //       <Routes>
-    //         <Route exact path="/" element={<HomePage />}></Route>
-    //         <Route exact path="/introfilm" element={<Introfilm />}></Route>
-    //         <Route exact path="/reviewpage" element={<ReviewPage />}></Route>
-    //         <Route exact path="/signup" element={<SignUp />}></Route>
-    //         <Route exact path="/admin" element={<AdminPage />}></Route>
-    //         <Route exact path="/member" element={<MemberPage />}></Route>
-    //         <Route exact path="/api" ></Route>
-    //         <Route
-    //           exact
-    //           path="/forgotpassword"
-    //           element={<ForgotPassword />}
-    //         ></Route>
-    //         <Route exact path="/admin/addfilm" element={<AddFilm />}></Route>
-    //       </Routes>
-    //     </div>
-    //   </Fragment>
-    // </Router>
+    // <AddReview/>
+    // <EditFilm/>
+    // <FindPage/>
+    <Router>
+      <Fragment>  
+        <div>
+          <Routes>
+            <Route exact path="/" element={<HomePage />}></Route>
+            <Route exact path="/introfilm" element={<Introfilm />}></Route>
+            <Route exact path="/reviewpage" element={<ReviewPage />}></Route>
+            <Route exact path="/signup" element={<SignUp />}></Route>
+            <Route exact path="/admin" element={<AdminPage />}></Route>
+            <Route exact path="/member" element={<MemberPage />}></Route>
+            <Route exact path="/api" ></Route>
+            <Route
+              exact
+              path="/forgotpassword"
+              element={<ForgotPassword />}
+            ></Route>
+            <Route exact path="/admin/addfilm" element={<AddFilm />}></Route>
+          </Routes>
+        </div>
+      </Fragment>
+    </Router>
   );
 }
 
